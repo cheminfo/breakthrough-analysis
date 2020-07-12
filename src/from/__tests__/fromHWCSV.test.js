@@ -15,5 +15,6 @@ test('fromTAInstruments', () => {
   expect(spectra).toHaveLength(5);
 
   const spectrum0 = spectra[0];
-  expect(spectrum0.data.elapsedTime.data).toHaveLength(2642);
+  console.log(spectrum0.variables);
+  expect(spectrum0.variables.x.data).toHaveLength(2642);
 });

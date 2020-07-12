@@ -110,20 +110,20 @@ export function fromHWCSV(text) {
   result.data.elapsedTime = arrayColumn(parsed, 1);
   result.data.time = arrayColumn(parsed, 0);
 
-  for (let i = 2; i++; i <= meta.numScans + 2) {
+  for (let i = 2; i <= meta.numScans + 1; i++) {
     result.data[headerRow[i]] = arrayColumn(parsed, i);
   }
 
   let analysis = new Analysis();
-  for (let i = 2; i++; i <= meta.numScans + 2) {
+  for (let i = 2; i <= meta.numScans + 1; i++) {
     analysis.pushSpectrum(
       {
         x: {
-          data: parsed.data.elapsedTime,
+          data: result.data.elapsedTime,
           label: 'elapsed time [ms]',
         },
         y: {
-          data: parsed.data[headerRow[i]],
+          data: result.data[headerRow[i]],
           label: headerRow[i],
         },
       },
