@@ -48,5 +48,9 @@
     "jest": "^26.1.0",
     "prettier": "^2.0.5",
     "rollup": "^2.18.2"
+  },
+  "dependencies": {
+    "common-spectrum": "^0.4.1",
+    "papaparse": "^5.2.0"
   }
 }
