@@ -4,6 +4,12 @@ import Papa from 'papaparse';
 
 import { Analysis } from '..';
 
+/**
+ * Parse the metadata from a CSV of a breaktrough experiment
+ *
+ * @param {array} lines - Array of strings (lines of file)
+ * @returns {Object} - metadata
+ */
 function parseMeta(lines) {
   let meta = { scans: [] };
 
@@ -85,7 +91,15 @@ function parseMeta(lines) {
 
   return meta;
 }
-
+/**
+ * Parse a CSV with results from a breaktrough experiment
+ * and create an analysis object where each gas is recorded
+ * in a seperate spectrum.
+ *
+ * @export
+ * @param {string} text - the filedata
+ * @returns Analysis
+ */
 export function fromHWCSV(text) {
   let lines = text.split(/\r?\n/).filter((line) => !line.match(/^\s*$/));
 
@@ -127,7 +141,7 @@ export function fromHWCSV(text) {
           label: headerRow[i],
         },
       },
-      { dataType: 'breaktrough', title: '', meta: parsed.meta },
+      { dataType: 'breakthrough', title: '', meta: meta },
     );
   }
 

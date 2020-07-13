@@ -13,10 +13,10 @@ Parse and analyze breakthrough experiments.
 ## Usage
 
 ```js
-import library from 'breakthrough-analysis';
+import BreakthroughCurves from 'breakthrough-analysis';
 
-const result = library(args);
-// result is ...
+let breaktroughcurves = BreakthroughCurves.fromHWCSV(file);
+let carbondioxide = breakthroughcurves.get('Carbon dioxide vs ms');
 ```
 
 ## [API Documentation](https://cheminfo.github.io/breakthrough-analysis/)
