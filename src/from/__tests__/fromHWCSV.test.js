@@ -3,7 +3,7 @@ import { join } from 'path';
 
 import { fromHWCSV } from '../fromHWCSV';
 
-test('fromTAInstruments', () => {
+test('fromHWCSV', () => {
   let file = readFileSync(
     join(__dirname, '../../../testFiles/200217-test1.csv'),
     'utf8',
